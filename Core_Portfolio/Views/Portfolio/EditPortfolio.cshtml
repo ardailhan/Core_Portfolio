@@ -1,0 +1,49 @@
+﻿@model EntityLayer.Concrete.Portfolio
+@{
+    ViewData["Title"] = "EditPortfolio";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("EditPortfolio", "Portfolio", FormMethod.Post))
+{
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <p class="card-description">Edit Portfolio Panel</p>
+                <form class="forms-sample">
+                    @Html.HiddenFor(x=>x.PortfolioID)
+                    <br />
+                    @Html.Label("Portfolio Title")
+                    @Html.TextBoxFor(x=> x.Name, new {@class = "form-control"})
+                    @Html.ValidationMessageFor(x => x.Name)
+                    <br />
+                    <label>Visual 1</label>
+                    @Html.TextBoxFor(x=> x.ImageUrl, new {@class = "form-control"})
+                    @Html.ValidationMessageFor(x => x.ImageUrl)
+                    <br />
+                    <label>Visual 2</label>
+                    @Html.TextBoxFor(x=> x.ImageUrl2, new {@class = "form-control"})
+                    @Html.ValidationMessageFor(x => x.ImageUrl2)
+                    <br />
+                    <label>Portfolio URL</label>
+                    @Html.TextBoxFor(x=> x.ProjectUrl, new {@class = "form-control"})
+                    @Html.ValidationMessageFor(x => x.ProjectUrl)
+                    <br />
+                    <label>Price</label>
+                    @Html.TextBoxFor(x=> x.Price, new {@class = "form-control"})
+                    @Html.ValidationMessageFor(x => x.Price)
+                    <br />
+                    <label>Completion</label>
+                    @Html.TextBoxFor(x=> x.Value, new {@class = "form-control"})
+                    @Html.ValidationMessageFor(x => x.Value)
+                    <br />
+                    <label>Platform</label>
+                    @Html.TextBoxFor(x=> x.Platform, new {@class = "form-control"})
+                    @Html.ValidationMessageFor(x => x.Platform)
+                    <br />
+                    <button class="btn btn-info">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+}
